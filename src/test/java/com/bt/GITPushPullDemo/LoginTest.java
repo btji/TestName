@@ -22,9 +22,10 @@ public class LoginTest {
 		  driver=new ChromeDriver(); 
 		  driver.get("https://www.zoho.com/");
 		  driver.manage().window().maximize();
-		  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		   
+		  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);		   
 	}
+	
+	
 	
 	@Test
 	public void doLogin() {
@@ -33,15 +34,9 @@ public class LoginTest {
 		driver.findElement(By.xpath("////*[@id='login']/button")).click();
 		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Admin@0810");
 		driver.findElement(By.xpath("//form[@id='login']/button")).click();
-				
-		/*
-		 * driver.findElement(By.xpath("//input[@type='password']")).sendKeys("mahima89"
-		 * );
-		 * driver.findElement(By.xpath("//div[@class='qhFLie']/div/div/button")).click()
-		 * ;
-		 */
 	}
 
+	
 	
 	@AfterSuite
 	public void tearDown() throws InterruptedException {
