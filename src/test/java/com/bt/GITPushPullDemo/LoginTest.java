@@ -20,7 +20,7 @@ public class LoginTest {
 	public void setUp() {
 		  System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\resources\\executables\\chromedriver.exe");
 		  driver=new ChromeDriver(); 
-		  driver.get("http://www.gmail.com/");
+		  driver.get("https://www.zoho.com/");
 		  driver.manage().window().maximize();
 		  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		   
@@ -29,8 +29,11 @@ public class LoginTest {
 	@Test
 	public void doLogin() {
 		
-		driver.findElement(By.xpath("//*[@id='identifierId']")).sendKeys("lawlessbt");
-		driver.findElement(By.xpath("//*[@class='VfPpkd-RLmnJb']")).click();
+		driver.findElement(By.xpath("//input[@id='login_id']")).sendKeys("lawlessbt@gmail.com");
+		driver.findElement(By.xpath("////*[@id='login']/button")).click();
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("Admin@0810");
+		driver.findElement(By.xpath("//form[@id='login']/button")).click();
+				
 		/*
 		 * driver.findElement(By.xpath("//input[@type='password']")).sendKeys("mahima89"
 		 * );
